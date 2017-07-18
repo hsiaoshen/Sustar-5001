@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>  标签页-<%= title %> </title>
+  <link rel="stylesheet" href="/stylesheets/tag.css">
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://cdn.bootcss.com/socket.io/2.0.3/socket.io.js"></script>
+</head>
+
+<body>
+  <% include ./header %>
+  <div class="wrap tag-box">
+    <div class="container">
+      <h1 class="h1">标签</h1>
+      <p >标签不仅能组织和归纳你的内容，还能关联相似的内容。正确的使用标签将让你的问题更多的被别人发现和嘲讽</p>
+      <% if(state){ %>
+        <div class="add">
+        <div class="adTag">
+          <input type="text" placeholder="添加关注的标签">
+        </div>
+        <button id="btn">加关注</button><span>（ 左右拖动进行导航排序，取消关注即可移除&nbsp;）</span>
+        </div>
+      <% }else{ %>
+        <div style="height: 20px;"></div>
+        <% } %>
+      <h3 class="h2">常用标签<small><a href="">全部</a></small></h3>
+      <div class="row" id="bigTags">
+        <!-- <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">IOS 开发</h3>
+            <ul class="multi">
+
+              <li class="tagmulti"><a href="" class="tag">ios</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">objective-c</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">sqlite</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">safari</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">xcode</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">phonegap</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">cocoa</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">javascript</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">macos</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">iphone</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">ipad</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">swift</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section> -->
+        <!-- <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">Android 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a href="" class="tag">android</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">java</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">eclipse</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">xml</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">phonegap</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">json</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">webview</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">android-studio</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section> -->
+        <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">Python 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a  class="tag" >python</a><% include ./tagtishi %></li>
+              <!-- <li class="tagmulti"><a href="" class="tag">list</a><% include ./tagtishi %></li> -->
+              <li class="tagmulti"><a  class="tag">django</a><% include ./tagtishi %></li>
+              <!-- <li class="tagmulti"><a href="" class="tag">flask</a><% include ./tagtishi %></li> -->
+              <!-- <li class="tagmulti"><a href="" class="tag">tornado</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">web.py</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">sqlalchemy</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">virtualenv</a><% include ./tagtishi %></li> -->
+            </ul>
+          </div>
+        </section>
+        <!-- <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">JAVA 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a href="" class="tag">java</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">java-ee</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">jar</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">spring</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">hibernate</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">struts</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">tomcat</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">maven</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">eclipse</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">intellij-idea</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section> -->
+        <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">开发语言</h3>
+            <ul class="multi">
+              <!-- <li class="tagmulti"><a href="" class="tag">java</a><% include ./tagtishi %></li> -->
+              <li class="tagmulti"><a  class="tag">C</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">c++</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">php</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">perl</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">python</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">javascript</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">c#</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">ruby</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">html</a><% include ./tagtishi %></li>
+              <!-- <li class="tagmulti"><a href="" class="tag">go</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">lua</a><% include ./tagtishi %></li> -->
+              <li class="tagmulti"><a  class="tag">node.js</a><% include ./tagtishi %></li>
+              <!-- <li class="tagmulti"><a href="" class="tag">erlang</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">scala</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">bash</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">actionscript</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section>
+        <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">PHP 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a  class="tag">php</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">mysql</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">apache</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">nginx</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">mvc</a><% include ./tagtishi %></li>
+              <!-- <li class="tagmulti"><a href="" class="tag">codeigniter</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">symfony</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">zend-framework</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">composer</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">laravel</a><% include ./tagtishi %></li> -->
+            </ul>
+          </div>
+        </section>
+        <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">Ruby 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a  class="tag">ruby</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">ruby-on-rails</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a class="tag">rubygems</a><% include ./tagtishi %></li>
+              <!-- <li class="tagmulti"><a href="" class="tag">rvm</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">macosx</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">bundle</a><% include ./tagtishi %></li>
+            </ul> -->
+          </div>
+        </section>
+        <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">搜索</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a  class="tag">搜索引擎</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">中文分词</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">全文检索</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">lucene</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">solr</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">sphinx</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">analyzer</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a  class="tag">elasticsearch</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section>
+        <!-- <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item"> -->
+            <!-- <h3 class="tag-list_itemheader">IOS 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a href="" class="tag">ios</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">objective-c</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">sqlite</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">safari</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">xcode</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">phonegap</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">cocoa</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">javascript</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">macos</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">iphone</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">ipad</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">swift</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section> -->
+        <!-- <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">Android 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a href="" class="tag">android</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">java</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">eclipse</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">xml</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">phonegap</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">json</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">webview</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">android-studio</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section>
+        <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">Python 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a href="" class="tag">python</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">list</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">django</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">flask</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">tornado</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">web.py</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">sqlalchemy</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">virtualenv</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section>
+        <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">JAVA 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a href="" class="tag">java</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">java-ee</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">jar</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">spring</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">hibernate</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">struts</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">tomcat</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">maven</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">eclipse</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">intellij-idea</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section>
+        <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">IOS 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a href="" class="tag">ios</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">objective-c</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">sqlite</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">safari</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">xcode</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">phonegap</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">cocoa</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">javascript</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">macos</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">iphone</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">ipad</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">swift</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section>
+        <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">Android 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a href="" class="tag">android</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">java</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">eclipse</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">xml</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">phonegap</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">json</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">webview</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">android-studio</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section>
+        <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">Python 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a href="" class="tag">python</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">list</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">django</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">flask</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">tornado</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">web.py</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">sqlalchemy</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">virtualenv</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section>
+        <section class="tag-list col-sm-12 col-md-4 col-lg-3">
+          <div class="tag-list_item">
+            <h3 class="tag-list_itemheader">JAVA 开发</h3>
+            <ul class="multi">
+              <li class="tagmulti"><a href="" class="tag">java</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">java-ee</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">jar</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">spring</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">hibernate</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">struts</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">tomcat</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">maven</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">eclipse</a><% include ./tagtishi %></li>
+              <li class="tagmulti"><a href="" class="tag">intellij-idea</a><% include ./tagtishi %></li>
+            </ul>
+          </div>
+        </section> -->
+      </div>
+      <h2 class="h2">社区帖子</h2>
+      <div class="row">
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/101.png" alt="101 新手上路" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">101新手上路</a></h3>
+              <p class="text">面向新手开发者的提问集中营</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/MongoDB.png" alt="MongoDB 计术问答" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">MongoDB 计术问答</a></h3>
+              <p class="text">社区力量为主，同时有 MongoDB 官方技术人员支持的旨在推广 MongoDB 的普及和最佳使用方案的社区。</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/qiniu.png" alt="七牛云储存问答" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">七牛云储存问答</a></h3>
+              <p class="text">非结构化静态文件的高速稳定安全云储存平台</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/open.png" alt="开源硬件与嵌入式问答" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">开源硬件与嵌入式问答</a></h3>
+              <p class="text">树莓派、Arduino 与其他硬件开发问答专区</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/bbs.png" alt="社区建设" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">社区建设</a></h3>
+              <p class="text">SegmentFault 社区建设建议反馈讨论</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/leancloud.png" alt="LeanCloud 问答" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">LeanCloud 问答</a></h3>
+              <p class="text">应动应用开发提供一站式解决方案</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/upyun.png" alt="UPYUN 问答" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">UPYUN 问答</a></h3>
+              <p class="text">非结构化数据云储存、云处理、云分发平台</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/wechat.png" alt="微信开放平台问答" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">微信开放平台问答</a></h3>
+              <p class="text">SegmentFault 微信开放平台 问答专区</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/Docker.png" alt="Docker 技术问答" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">Docker 技术问答</a></h3>
+              <p class="text">Docker 技术问答</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/ucloud.png" alt="UCloud开发者问答" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">UCloud开发者问答</a></h3>
+              <p class="text">UCloud开发者问答</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/amaze.png" alt="Amaze UI官方社区" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">Amaze UI官方社区</a></h3>
+              <p class="text">Amaze UI官方社区计术问答平台</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/agora.png" alt="Agora.io 问答社区" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">Agora.io 问答社区</a></h3>
+              <p class="text">声网 Agora.io 实时云开发社区</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-lg-4">
+          <div class="border">
+            <a href="" class="pull">
+              <img src="./images/sequoia.png" alt="SequoiaDB 技术问答" width="40" height="40">
+            </a>
+            <div class="border-body">
+              <h3 class="h5"><a href="">SequoiaDB 技术问答</a></h3>
+              <p class="text">SequoiaDB联合SegmentFault 共同推出技术问答专区，在这里你将得到来自官方技术人员的帮助，并和像你一样的技术人员交流。一起把SequoiaDB做的更大更强！</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% include ./foot %>
+</body>
+<script src="js/tag.js"></script>
+</html>

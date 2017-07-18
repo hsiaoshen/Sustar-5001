@@ -1,0 +1,40 @@
+footer {
+  border-top: 1px solid #EEE;
+  padding: 40px 0;
+  color: #888;
+  line-height: 1.6;
+  margin-top: 50px;
+}
+
+footer a {
+  color: #888;
+}
+
+footer a:hover {
+  color: #888;
+  outline: 0;
+}
+
+.site-link {
+  margin: 0 0 40px 0;
+}
+
+.site-link dt {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.site-link dd {
+  font-size: 13px;
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.site-link a {
+  outline: none;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 13px;
+}

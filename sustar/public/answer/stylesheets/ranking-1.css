@@ -1,0 +1,60 @@
+.widget-box {
+  margin: 0 0 25px 0;
+  padding-top: 25px;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+}
+
+.widget-top10 {
+  padding-left: 30px;
+}
+
+.widget-top10 li {
+  color: #33a3dc;
+  margin-bottom: 6px;
+}
+
+.widget-top10 li a {
+  color: #4e72b8;
+}
+
+.widget-top10 img {
+  margin-right: 10px;
+}
+
+.avatar-24 {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.widget-top10 a.ellipsis {
+  width: auto;
+  max-width: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.widget-top10 .pull-right.text-muted {
+  color: #666;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.widget-box ol {
+  list-style-type: upper-roman;
+}
+
+.widget-box ol li {
+  list-style: upper-roman;
+}

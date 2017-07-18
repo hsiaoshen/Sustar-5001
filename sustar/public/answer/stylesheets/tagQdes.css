@@ -1,0 +1,43 @@
+.tag-info{
+  width: 100%;
+  background: #f6f6f6;
+  box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.24);
+  margin-top: 50px;
+  padding-bottom: 10px;
+}
+.tag-k{
+  padding-top: 15px;
+}
+.tag-ico{
+  width: 24px;
+  height: 24px;
+  margin: 0px 20px;
+}
+.tagName{
+  font-size: 18px;
+  margin-right: 10px;
+}
+.btn1{
+    display: inline-block;
+}
+.addTag-btn{
+  padding:1px 5px;
+  font-size: 12px;
+  line-height: 2;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  border-color: #ccc;
+  background-color: #fff;
+}
+.tag-des1{
+  margin: auto;
+  width: 95%;
+  color: #666;
+  margin-top: 15px;
+  margin-bottom: 0;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}

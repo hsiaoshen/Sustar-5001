@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/ranking-1.css' />
+    <link rel="stylesheet" href="/stylesheets/foot.css">
+    <title>suStart</title>
+</head>
+
+<body>
+    <% include ./header %>
+        <div class="wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-9 main height-content">
+                        <ul class="nav nav-tabs md10 mt30 title" role="tablist">
+                            <li role="col-xs-2 presentation"><a href="#oneNew" aria-controls="oneNew" role="tab" data-toggle="tab">最新动态</a></li>
+                            <li role="col-xs-2 presentation" class="active"><a href="#towNew" aria-controls="towNew" role="tab" data-toggle="tab">最新回答</a></li>
+                            <li role="col-xs-2 presentation"><a href="#threHot" aria-controls="threHot" role="tab" data-toggle="tab">热门回答</a></li>
+                            <li role="col-xs-2 presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">等待回答</a></li>
+                            <li role="col-xs-2 presentation"><a href="#pay" aria-controls="pay" role="tab" data-toggle="tab">付费回答</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="oneNew">
+                                <section class="hover-show streams_item timeline">
+                                    <dic class="stream-wrap media">
+                                        <div class="pull-left mr15">
+                                            <a href="">
+                                                <img src="https://static.segmentfault.com/v-58fb6746/global/img/tag_icon.svg" alt="" class="media-object avatar-40">
+                                            </a>
+                                        </div>
+                                    </dic>
+                                    <div class="media-body">
+                                        <p class="text-muted sentence">
+                                            <a href="">javascript</a>
+                                            <span>标签的热门文章 · </span>
+                                            <time class="timeago">3小时前</time>
+                                            <img height='14' src="https://static.segmentfault.com/v-58fb6746/global/img/fire.svg" alt="" class="mb5 fire">
+                                        </p>
+                                        <h2 class="h4 title">
+                      <a href="">我就想问问谁TM最帅！！</a>
+                    </h2>
+                                        <!--                                                图文并茂的写法 -->
+                                        <div class="row">
+                                            <!-- 文章部分 -->
+                                            <div class="col-md-10">
+                                                <div class="fulltext fmt" style="display: none">
+                                                    <p>这是你要插入内容的部分 具体操作 土真多</p>
+                                                    <p>我感觉就是截取一定的长度放进来 这样在点击显示全部后 </p>
+                                                    <p>再全部显示 长度不应该过长 具体多长自己考虑 怎么也要在三段左右 我为了凑字数 就多说几句 说多少呢 怎么也要三段 这新班</p>
+
+                                                    <img src="http://gw.alicdn.com/tps/TB1JEx8MXXXXXXfXVXXXXXXXXXX-800-370.png" alt="">
+                                                    <p>这是展开后的内容</p>
+                                                    <p>编辑完的帖子插入到这里</p>
+                                                    <p>当然是完整的帖子</p>
+                                                    <p>我这里就写几句话 意思一下</p>
+                                                </div>
+                                                <p class="exxerpt wordbreal hidden-xs">
+                                                    这是你要插入内容的部分 具体操作 我感觉就是截取一定的长度放进来 这样在点击显示全部后 再全部显示 长度不应该过长 具体多长自己考虑 怎么也要在三段左右 我为了凑字数 就多说几句 说多少呢 怎么也要三段 这新班 土真多 能不来 甄别来 要不是一个 末尾的话别忘了加上 ...
+                                                    <a href="javascript:;" class="tag read-more-btn show-all-content">展示全部</a>
+                                                </p>
+                                            </div>
+                                            <!-- 图片部分 -->
+                                            <div class="col-md-2 pull-right article_img visible-lg" style="background:url(http://gw.alicdn.com/tps/TB1JEx8MXXXXXXfXVXXXXXXXXXX-800-370.png); background-size: cover; "></div>
+
+                                        </div>
+                                        <p class="text-muted">
+                                            <span class="mr10">赞 0</span>
+                                            <span class="">收藏 0</span>
+                                            <span class="ml10">评论 0</span>
+                                        </p>
+                                    </div>
+                                </section>
+                                <!-- 无图的贴字  附带已解决的框  -->
+                                <section class="hover-show streams_item timeline">
+                                    <dic class="stream-wrap media">
+                                        <div class="pull-left mr15">
+                                            <a href="">
+                                                <img src="https://static.segmentfault.com/v-58fb6746/global/img/tag_icon.svg" alt="" class="media-object avatar-40">
+                                            </a>
+                                        </div>
+                                    </dic>
+                                    <div class="media-body">
+                                        <p class="text-muted sentence">
+                                            <a href="">javascript</a>
+                                            <span>标签的热门文章 · </span>
+                                            <time class="timeago">3小时前</time>
+                                            <img height='14' src="https://static.segmentfault.com/v-58fb6746/global/img/fire.svg" alt="" class="mb5 fire">
+                                        </p>
+                                        <h2 class="h4 title">
+                      <span class="label question-label label-success">解决</span>
+                      <a href="">我就想问问谁TM最帅！！</a>
+                    </h2>
+
+                                        <!-- 文章部分 -->
+                                        <div class="fulltext fmt"></div>
+                                        <p class="exxerpt wordbreal hidden-xs">
+                                            这是你要插入内容的部分 具体操作 我感觉就是截取一定的长度放进来 这样在点击显示全部后 再全部显示 长度不应该过长 具体多长自己考虑 怎么也要在三段左右 我为了凑字数 就多说几句 说多少呢 怎么也要三段 这新班 土真多 能不来 甄别来 要不是一个 末尾的话别忘了加上 ...
+                                            <a href="javascript:;" class="tag read-more-btn show-all-content">展示全部</a>
+                                        </p>
+                                        <p class="text-muted">
+                                            <span class="">关注 0</span>
+                                            <span class="ml10">回答 0</span>
+                                        </p>
+                                    </div>
+
+                                </section>
+                            </div>
+                            <div role="tabpanel" class="tab-pane question-stream active" id="towNew">
+                                <!-- 每一个问题 组成 -->
+                                <% data.forEach(function(data){ %>
+                                    <section class="heightlight stream_list_item">
+                                        <div class="qu_rank">
+                                            <div class="votes hidden-xs">
+                                                <span><%= data.praise %></span>
+                                                <small>得票</small>
+                                            </div>
+                                            <div class="answers answered">
+                                                <span><%= data.answeruid.length %></span>
+                                                <small>回答</small>
+                                            </div>
+                                            <div class="views hidden-xs">
+                                                <span><%= data.questionview %></span>
+                                                <small>浏览</small>
+                                            </div>
+                                        </div>
+                                        <!--          问题部分 -->
+                                        <div class="summary">
+                                            <ul class="author list-inline">
+                                                <li>
+                                                    <a href="">舞动说</a>
+                                                    <span class="split"></span>
+                                                    <span><a href="">3小时</a>前回答</span>
+                                                </li>
+                                            </ul>
+                                            <h2 class="title"><a class="index-question-title"><%= data.title %><span class="id"><%= data._id %></span></a></h2>
+                                            <ul class="taglist-inline">
+                                                <!-- <li>
+                        <a href="" class="tag tag-sm">vim</a>
+                      </li>
+                      <li>
+                        <a href="" class="tag tag-sm">帅逼联盟</a>
+                      </li> -->
+                                                <li
+                                                    <a href="" class="tag tag-sm">
+                                                        <%= data.tags[0] %>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </section>
+                                    <% }) %>
+
+
+                                        <!-- 第二种问题 -->
+                                        <!-- <section class="stream_list_item">
+                  <div class="qu_rank">
+                    <div class="votes hidden-xs">
+                      <span>0</span>
+                      <small>得票</small>
+                    </div>
+                    <div class="answers">
+                      <span>0</span>
+                      <small>回答</small>
+                    </div>
+                    <div class="views hidden-xs">
+                      <span>66</span>
+                      <small>浏览</small>
+                    </div>
+                  </div> -->
+                                        <!--          问题部分 -->
+                                        <!-- <div class="summary">
+                    <ul class="author list-inline">
+                      <li>
+                        <a href="">舞动说</a>
+                        <span class="split"></span>
+                        <span><a href="">3小时</a>前回答</span>
+                      </li>
+                    </ul>
+                    <h2 class="title"><a href="">为何暴雨辣么帅？在线等 很急</a></h2>
+                    <ul class="taglist-inline">
+                      <li>
+                        <a href="" class="tag tag-sm">vim</a>
+                      </li>
+                      <li>
+                        <a href="" class="tag tag-sm">帅逼联盟</a>
+                      </li>
+                      <li>
+                        <a href="" class="tag tag-sm">javascript</a>
+                      </li>
+                    </ul>
+                  </div>
+                </section> -->
+                            </div>
+                            <div role="tabpanel" class="tab-pane question-stream" id="threHot">
+                                <div class="text-muted md10 hidden-xs">
+                                    <span>排序：</span>
+                                    <div class="btn-group btn-group-xs">
+                                        <a class="btn btn-default active">日热门</a>
+                                        <a class="btn btn-default">周热门</a>
+                                        <a class="btn btn-default">月热门</a>
+                                    </div>
+                                </div>
+
+                                <section class="stream_list_item sx-px">
+                                    <div class="qu_rank">
+                                        <div class="votes hidden-xs">
+                                            <span>0</span>
+                                            <small>得票</small>
+                                        </div>
+                                        <div class="answers">
+                                            <span>0</span>
+                                            <small>回答</small>
+                                        </div>
+                                        <div class="views hidden-xs">
+                                            <span>66</span>
+                                            <small>浏览</small>
+                                        </div>
+                                    </div>
+                                    <!--          问题部分 -->
+                                    <div class="summary">
+                                        <ul class="author list-inline">
+                                            <li>
+                                                <a href="">认真男</a>
+                                                <span class="split"></span>
+                                                <span><a href="">1分钟</a>前提问</span>
+                                            </li>
+                                        </ul>
+                                        <h2 class="title"><a href="">这个帖子真的6666666</a></h2>
+                                        <ul class="taglist-inline">
+                                            <li>
+                                                <a href="" class="tag tag-sm">都比</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                            <div role="tabpanel" class="tab-pane question-stream" id="settings">
+                                <!-- 未解决  音版回答为0   问题 -->
+                                <section class="stream_list_item">
+                                    <div class="qu_rank">
+                                        <div class="votes hidden-xs">
+                                            <span>0</span>
+                                            <small>得票</small>
+                                        </div>
+                                        <div class="answers">
+                                            <span>0</span>
+                                            <small>回答</small>
+                                        </div>
+                                        <div class="views hidden-xs">
+                                            <span>66</span>
+                                            <small>浏览</small>
+                                        </div>
+                                    </div>
+                                    <!--          问题部分 -->
+                                    <div class="summary">
+                                        <ul class="author list-inline">
+                                            <li>
+                                                <a href="">认真男</a>
+                                                <span class="split"></span>
+                                                <span><a href="">1分钟</a>前提问</span>
+                                            </li>
+                                        </ul>
+                                        <h2 class="title"><a href="">这里已经起飞, 请组织发话</a></h2>
+                                        <ul class="taglist-inline">
+                                            <li>
+                                                <a href="" class="tag tag-sm">都比</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                            <!-- pay start -->
+                            <div role="tabpanel" class="tab-pane question-stream" id="pay">
+                                <!-- 头选择标签地方 -->
+                                <div class="filter-container">
+                                    <span>筛选: </span>
+                                    <ul class="taglist--inline inline-block" style='margin-top: 15px; margin-bottom: 0;'>
+                                        <li class="tapPopup mb5">
+                                            <a href="" class="tag tag-sm tag-hover">全部</a>
+                                        </li>
+                                        <li class="tapPopup mb5">
+                                            <a href="" class="tag tag-sm">javascript</a>
+                                        </li>
+                                        <li class="tapPopup mb5">
+                                            <a href="" class="tag tag-sm">php</a>
+                                        </li>
+                                        <li class="tapPopup mb5">
+                                            <a href="" class="tag tag-sm">css</a>
+                                        </li>
+                                        <li class="tapPopup mb5">
+                                            <a href="" class="tag tag-sm">html5</a>
+                                        </li>
+                                        <li class="tapPopup mb5">
+                                            <a href="" class="tag tag-sm">node.js</a>
+                                        </li>
+                                        <li class="tapPopup mb5">
+                                            <a href="" class="tag tag-sm">更多</a>
+                                        </li>
+                                        <li class="tapPopup mb5 tag_more">
+                                            <a href="" class="tag tag-sm">???</a>
+                                        </li>
+                                        <li class="tapPopup mb5 tag_more">
+                                            <a href="" class="tag tag-sm">!!!</a>
+                                        </li>
+                                        <li class="tapPopup mb5 tag_more">
+                                            <a href="" class="tag tag-sm">~~~</a>
+                                        </li>
+                                        <li class="tapPopup mb5 tag_more">
+                                            <a href="" class="tag tag-sm">+++</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <section class="stream_list_item sx-px">
+
+                                    <div class="paidanswer__expert--item">
+                                        <!-- 头像部分 -->
+                                        <div class="expert-avatar">
+                                            <a href="" style='display:block;'>
+                                                <img src="https://sfault-avatar.b0.upaiyun.com/324/771/3247715052-56fce46b2ae70_huge128" alt="" class="img-circle">
+                                            </a>
+                                        </div>
+
+                                        <!-- 内容部分 -->
+                                        <div class="expert-info">
+                                            <!-- 用户昵称 -->
+                                            <a href="" style='display: inline-block;'>
+                                                <p class="expert-name">爸爸</p>
+                                            </a>
+
+                                            <!-- 打赏金额 -->
+                                            <a href="" class="pull-right btn btn-default btn-sm mt5">
+                        支付 <span class="expert-price">$100 </span>向他提问
+                      </a>
+                                            <!-- 经历介绍 -->
+                                            <p class="expert-job">菜鸟在线 前端工程师</p>
+                                            <!-- 能力介绍 -->
+                                            <div class="expert-desc">
+                                                <p>擅长车肚子 不会就敲 嗷嗷写文档</p>
+                                            </div>
+                                            <!-- 个人擅长标签 -->
+                                            <div class="expert-tags">
+                                                <ul class="taglist--inline multi mb0 mt5 fs13">
+                                                    <li class="tapPopup mb0">
+                                                        <a href="" class="tag">javascript</a>
+                                                    </li>
+                                                    <li class="tapPopup mb0">
+                                                        <a href="" class="tag">linux</a>
+                                                    </li>
+                                                    <li class="tapPopup mb0">
+                                                        <a href="" class="tag">php</a>
+                                                    </li>
+                                                    <li class="tapPopup mb0">
+                                                        <a href="" class="tag">nginx</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </section>
+                            </div>
+                            <!-- pay end -->
+                        </div>
+                    </div>
+                    <% include ./ranking-1 %>
+                </div>
+                <% include ./page %>
+            </div>
+        </div>
+
+        <% include ./foot %>
+            <script>
+                $(function() {
+                    function get(URL) {
+                        //创建form表单
+                        var temp_form = document.createElement("form");
+                        temp_form.action = URL;
+                        //如需打开新窗口，form的target属性要设置为'_blank'
+                        temp_form.target = "_self";
+                        temp_form.method = "get";
+                        temp_form.style.display = "none";
+
+                        var opt = document.createElement("textarea");
+                        var opt1 = document.createElement("textarea");
+                        // opt.name = "url";
+                        // opt.value = URL;
+                        // opt.name = "id";
+                        // opt.value = id;
+                        temp_form.appendChild(opt);
+                        // temp_form.appendChild(opt1);
+
+                        document.body.appendChild(temp_form);
+
+                        //提交数据
+                        temp_form.submit();
+                    };
+                    $(".index-question-title").click(function() {
+                        var id = $(this).children().html();
+                        // var title = $(this).html();
+                        console.log(id);
+                        get("/answer/"+id);
+                    });
+
+                    $(document).ready(function() {
+                        // $('.widget-top10').eq(0);
+                        $('.no-left').addClass('disabled');
+                        $('.now-page').addClass('active');
+                    });
+                })
+            </script>
+</body>
+
+</html>

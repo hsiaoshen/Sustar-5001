@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/find.css">
+    <script src="https://cdn.bootcss.com/jquery/3.0.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="head">
+      <div class="img">
+      <a href="/"><img src="/images/sustar-logo.png" alt=""></a>
+      </div>
+    </div>
+    <div class="content">
+        <div class="kuang">
+        <h3 style="color:#777777;">找回密码</h3>
+        <form class="" action="/reset" method="post">
+          <p class="user">
+            <label for="">昵称</label><br>
+            <input type="text" name="nick" placeholder="请输入用户名"></p>
+          <p class="you">
+            <label for="">邮箱</label><br>
+            <input type="text" name="uid" placeholder="请输入邮箱"></p>
+          <button type="submit" class="try">提交</button>
+        </form>
+        </div>
+    </div>
+    <div class="foot">
+    <div class="ci">
+      <a href="login">用户登录</a><span>|</span><a href="index">返回首页</a>
+    </div>
+    </div>
+    <script type="text/javascript">
+    var err = "<%= err %>";
+    console.log(err);
+    if (err == "err") {
+      alert("昵称或者账号错误！");
+    };
+    $('input').focus(function(){
+      $(this).css({"box-shadow":"0px 0px 3px 1px #3388FF","border":"1px solid #3388FF"});
+    })
+    $('input').blur(function(){
+      $(this).css({"box-shadow":"0px 0px 0px 0px","border":"1px solid #ccc"})
+      $("p span").css("display","none")
+    })
+
+    $('.you input').blur(function(){
+      var b=$(this).val()
+      var c=/[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.com)$/i.test(b);
+      if(!c){
+      $(".you").append("<span>请输入正确的邮箱!</span>");
+      $(".try").attr("disabled","disabled")
+    }else {
+      $(".try").removeAttr("disabled")
+    }
+    })
+
+    $('.user input').blur(function(){
+      var b=$(this).val()
+      var n=b.length;
+      if(n>12 || n==0){
+        $(".user").append("<span>请输入大于0少于12位的用户名!</span>");
+        $(".try").attr("disabled","disabled")
+      }else {
+        $(".try").removeAttr("disabled")
+      }
+    })
+    $('form').submit(function(){
+      var a=$(".user input").val();
+      var b=$(".you input").val();
+      if(a=="" || b==""){
+        return false;
+      }
+    })
+    </script>
+  </body>
+</html>

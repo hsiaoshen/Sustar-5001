@@ -1,0 +1,29 @@
+.ranking-box{
+  width: 212.5px;
+  text-align: left;
+}
+.ranking-box ol li img{
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+}
+.ranking-box ol li a{
+  display: inline-block;
+  margin-left: 15px;
+  color: #4e72b8;
+}
+.ranking-box ol{
+  margin-left: 17px;
+}
+.ranking-box ol li{
+  margin-top: 5px;
+}
+.ranking-title{
+  font-size: 17px;
+}
+.ranking-box ol li span{
+  float: right;
+}
+.ranking-box ol li{
+  text-decoration: line-through;
+}

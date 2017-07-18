@@ -1,0 +1,416 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+}
+
+.container {
+  padding: 0;
+}
+
+.navbar {
+  min-height: 60px;
+  /*line-height: 60px;*/
+  margin-bottom: 0;
+}
+
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.nav-logo {
+  float: left;
+  display: block;
+  width: 188px;
+  height: 60px;
+  margin-left: 10px;
+  /*background: url(../public/images/sustar-logo.png);*/
+}
+
+.nav>li {
+  display: inline-block;
+}
+
+.nav>li>a {
+  /*padding: 0;*/
+  display: inline-block;
+  padding: 0 13px;
+  height: 30px;
+  color: #4e72b8 !important;
+  line-height: 30px;
+  background: transparent;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+.collapse>.nav>li>a:hover {
+  background-color: #e7e7e7;
+}
+
+.navbar-nav {
+  line-height: 60px;
+  display: inline-block;
+}
+
+
+/*.active {
+  line-height: 30px;
+}*/
+
+.new-show:after {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: #ff4500;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  border-radius: 50%;
+}
+
+.line-leight {
+  line-height: 58px;
+}
+
+.navbar-form {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.form-group {
+  position: relative;
+}
+
+.btn {
+  padding: 6px 9px;
+  color: #999;
+  border: none;
+  border-radius: 3px;
+}
+
+.btn-p {
+  position: absolute;
+  top: 14px;
+  left: 1px;
+}
+
+.btn-default:hover {
+  color: #333;
+  background: #F6F6F6;
+  border-color: #adadad;
+}
+
+.form-control {
+  padding-left: 35px;
+  /*line-height: 60px;*/
+}
+
+.form-control:focus {
+  background: #F6F6F6;
+  box-shadow: none;
+}
+
+.navbar-right>.nav>li>.a-hover:hover {
+  background-color: #e7e7e7;
+}
+
+.log-in {
+  background-color: #4e72b8;
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  /* ----------------------------------------- 神奇居中tag ------------------------------------ */
+  margin-left: 15px;
+  display: inline-block;
+  padding: 0 13px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+.log-in>a {
+  color: #fff;
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .form-group .header-search {
+    width: 170px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-group .header-search {
+    width: 234px;
+  }
+}
+
+.nav-tags {
+  background: #4e72b8;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+}
+
+.nav_list {
+  overflow: hidden;
+  height: 34px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav_item {
+  display: inline-block;
+}
+
+.nav_list .nav_item a {
+  display: block;
+  padding: 9px;
+  color: #eee;
+  line-height: 1;
+}
+
+.nav_list .nav_item a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+.nav_list .nav_item a span {
+  margin-right: 5px;
+}
+
+.split {
+  width: 0;
+}
+
+.split::after {
+  content: '';
+  height: 16px;
+  border-right: 1px solid rgba(157, 204, 182, 0.25);
+}
+
+.nav_list .nav_item .nav_tag {
+  padding: 10px;
+}
+
+.nav_item-more {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 34px;
+  width: 34px;
+  background: #4e72b8;
+}
+
+.nav-posi {
+  position: relative;
+}
+
+.nav_item-more::after {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  background-size: 100%;
+  background-image: linear-gradient(90deg, rgba(0, 95, 60, 0) 0%, #4e72b8 100%);
+}
+
+.tag__more {
+  width: 22px;
+  padding: 7px 0;
+}
+
+.tag__more--icon {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: #eee;
+  border-radius: 50%;
+  float: left;
+  margin-right: 3px;
+}
+
+.nav_list .nav_item .tag_item_more:hover {
+  background: transparent;
+}
+
+.navbar-right .login_out {
+  display: none !important;
+}
+
+.glyphicon-pencil {}
+
+.navbar-nav>li>.dropdown-menu {
+  margin-top: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.btn-group {
+  display: block;
+}
+
+.btn-primary {
+  background: #4e72b8;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.24);
+  color: #eee;
+}
+
+.btn-primary:hover {
+  background-color: #33a3dc;
+}
+
+.btn-primary:active {
+  background-color: #e7e7e7;
+}
+
+.btn-primary:focus {
+  background-color: #e7e7e7;
+}
+
+.btn-group .btn {
+  padding: 6px 6px;
+}
+
+.login_pad {
+  padding: 0 5px;
+}
+
+@media (min-width: 768px) {
+  .navbar-right .dropdown-menu {
+    top: 52px;
+  }
+}
+
+.navbar-right>.nav>li>.login_a:hover {
+  background-color: #e7e7e7;
+}
+
+.login_a {
+  line-height: 30px;
+}
+
+#bell {
+  width: 276px;
+  padding-top: 0;
+}
+
+.bell-top {
+  background-color: #f5f5f5;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav-tabs>li>a {
+  margin-right: 0px;
+}
+
+.nav-tabs>li {
+  line-height: 1;
+  margin-right: 0px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  background-color: #fff;
+  border: none;
+  border-radius: 0px;
+  background-color: transparent;
+  font-weight: bold;
+  color: #4e72b8;
+  box-shadow: inset 0px -2px 0px 0px #4e72b8;
+}
+
+.nav-tabs>li>a:hover {
+  box-shadow: inset 0px -2px 0px 0px #4e72b8;
+  border-radius: 0px;
+  background-color: #fff;
+  border: none;
+  border-radius: 0px;
+}
+
+.tab-content {
+  height: 250px;
+  margin-bottom: 0;
+}
+
+.text_tab {
+  line-height: 40px;
+  margin: 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bell_tag {
+  position: relative;
+}
+
+.tab-content .text_tab a, .foot_tab a {
+  font-size: 13px;
+  color: #666;
+  line-height: 30px;
+}
+
+.tab-content .text_tab a:hover {
+  color: #ed502b;
+  text-decoration: none;
+}
+
+.foot_tab a {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+}
+
+.foot_tab {
+  height: 30px;
+  background-color: #f5f5f5;
+  bottom: -5px;
+  position: absolute;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.no-text {
+  line-height: 30px;
+  text-align: center;
+  margin: 0;
+}
+
+.navbar-toggle {
+  float: left;
+  margin-top: 13px;
+  margin-left: 15px;
+  margin-bottom: 13px;
+}
+
+.denglu a {
+  display: block;
+  line-height: 60px;
+  color: #4e72b8;
+  font-size: 25px;
+  padding-right: 15px;
+}
+
+.denglu>a:hover {
+  color: #33a3dc;
+}
+
+.denglu .login_out {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .visible-xs {
+    display: inline-block!important;
+  }
+}
+.login-box{
+  display: none;
+}
